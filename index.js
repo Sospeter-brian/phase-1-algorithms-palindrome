@@ -1,5 +1,14 @@
+function reverse(word) {
+  //const wordArray = word.split("");
+  //const reversedWordArray = wordArray.reverse();
+  //const reversedWord = reversedWord.join("");
+  return word.split("").reverse().join("");
+}
+
 function isPalindrome(word) {
   // Write your algorithm here
+  const reversedWord = reverse(word);
+  return word === reversedWord;
 }
 
 /* 
@@ -20,6 +29,18 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("a"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("abba"));
+
+  console.log("")
 }
 
 module.exports = isPalindrome;
